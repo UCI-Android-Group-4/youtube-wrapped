@@ -16,8 +16,8 @@ Present a user information about their past liked videos on Youtube, like the ch
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Youtube
-- **Mobile:** Would be initially created for mobile, as similar to Spotify Wrapped, it is only visible through the mobile app. However a website would be nice because youtube is commonly used through desktop. But a mobile app is the main focus at this moment.**
-- **Story:** Summarizes the user’s Youtube activity in their last few liked videos, and analyzes what kinds of videos the user has frequently liked.**
+- **Mobile:** Would be initially created for mobile, as similar to Spotify Wrapped, it is only visible through the mobile app. However a website would be nice because youtube is commonly used through desktop. But a mobile app is the main focus at this moment.
+- **Story:** Summarizes the user’s Youtube activity in their last few liked videos, and analyzes what kinds of videos the user has frequently liked.
 - **Market:** Any Youtube user who spends a considerable amount of time watching Youtube videos.
 - **Habit:** The app is not intended to be used often. The app provides information about their activity over a long amount of time, so the user would not be expected to check it often.**
 - **Scope:** The user is the main scope, as the information is self tailored to when you sign in. However in the future we could allow for users to share their Youtube Liked Wrapped with friends and family.
