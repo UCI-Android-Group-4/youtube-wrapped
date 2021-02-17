@@ -34,12 +34,12 @@ Present a user information about their past liked videos on Youtube, like the ch
 
 * Users can choose between their last liked 100, 150, 200, and 250 videos for their wrapped to take into account.
 * Wrapped screen will be expanded across multiple screens.
-*Users can choose get their wrapped from their last year of liked videos
-*Users can choose to get their wrapped based on their dislike videos.
-*Add additional screens to accommodate updated ideas.
-*Users will able to see more statistics regarding their past liked videos
+* Users can choose get their wrapped from their last year of liked videos
+* Users can choose to get their wrapped based on their dislike videos.
+* Add additional screens to accommodate updated ideas.
+* Users will able to see more statistics regarding their past liked videos
 * Improved UI implementation
-*Users can share their wrapped with friends or on social media
+* Users can share their wrapped with friends or on social media
 
 
 ### 2. Screen Archetypes
