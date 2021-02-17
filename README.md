@@ -14,7 +14,6 @@ Original App Design Project - README Template
 Present a user information about their past liked videos on Youtube, like the channel they liked the most, the genre they liked the most, and etc.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Youtube
 - **Mobile:** Would be initially created for mobile, as similar to Spotify Wrapped, it is only visible through the mobile app. However a website would be nice because youtube is commonly used through desktop. But a mobile app is the main focus at this moment.
 - **Story:** Summarizes the user’s Youtube activity in their last few liked videos, and analyzes what kinds of videos the user has frequently liked.
