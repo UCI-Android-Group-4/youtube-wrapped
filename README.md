@@ -69,7 +69,11 @@ Present a user information about their past liked videos on Youtube, like the ch
 
 ### [BONUS] Digital Wireframes & Mockups
 
+<img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/youtube_wrapped_figma.gif" width=250><br>
+
 ### [BONUS] Interactive Prototype
+
+https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scaling=scale-down
 
 ## Schema 
 [This section will be completed in Unit 9]
