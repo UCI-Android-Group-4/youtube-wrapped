@@ -65,7 +65,7 @@ Present a user information about their past liked videos on Youtube, like the ch
 * Wrapped Screen -> (Optional) login a new User
 
 ## Wireframes
-<img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/wireframe.PNG" width=600>
+<img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/wireframe1.PNG" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
