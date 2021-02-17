@@ -48,21 +48,21 @@ Present a user information about their past liked videos on Youtube, like the ch
 * Login screen
    * Will have a sign in button to redirect you to the Youtube login
    * After login, will be sent to the Wrapped screen
-* Wrapped screen
-   * Shows your favorite channels, most watched videos, and favorite genre all in one page
+* Wrapped View Pager
+   * Shows your favorite channels, most watched videos, and favorite genre all in two swipable fragments
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
 * Login screen
-* Wrapped Screen
+* Wrapped View Pager (2 Pages)
 
 **Flow Navigation** (Screen to Screen)
 
 * Login screen -> OAuth Youtube Login
-* OAuth Youtube Login -> Wrapped Screen
-* Wrapped Screen -> (Optional) login a new User
+* OAuth Youtube Login -> Wrapped View Pager
+* Wrapped View Pager -> (Optional) login a new User
 
 ## Wireframes
 <img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/wireframe1.PNG" width=600>
@@ -75,10 +75,18 @@ Present a user information about their past liked videos on Youtube, like the ch
 <img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/youtube_wrapped_figma.gif" width=250><br>
 https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scaling=scale-down
 
+
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### No models required for this Application
+### Networking
+#### List of network requests by screen
+   - Login Screen
+      - (Read/GET) Get token from user's Youtube acount for OAuth Login
+   - Wrapped View Pager
+      - (Read/GET) Get user's liked videos
+      - (Read/GET) Get video data from those liked videos
+      
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
