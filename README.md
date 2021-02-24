@@ -84,5 +84,17 @@ https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scalin
       - (Read/GET) Get token from user's Youtube acount for OAuth Login
    - Wrapped View Pager
       - (Read/GET) Get user's liked videos
+          - GET https://www.googleapis.com/youtube/v3/videos?myRating=like
       - (Read/GET) Get video data from those liked videos
+
+#### [OPTIONAL:] Existing API Endpoints
+##### Youtube API
+- Base URL - [https://www.googleapis.com/youtube/v3](https://developers.google.com/youtube/v3/docs/videos/)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    |/?part=snippet&myRating=like&maxResults=50 | get last 50 liked videos
+    `GET`    | /characters/?name=name | return specific character by name
+    `GET`    | /houses   | get all houses
+    `GET`    | /houses/?name=name | return specific house by name
       
