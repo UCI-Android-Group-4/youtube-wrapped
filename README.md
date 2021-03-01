@@ -127,7 +127,7 @@ https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scalin
     `GET`   |scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly&response_type=code&state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2.example.com%2Ftoken&redirect_uri={redirect_uri}client_id={client_id}            |Gets the Oath 2.0 token from the user.
     
 ## Sprint 1
-<img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/Login.jpg" width=250><br>
+<img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/LoginScreen.png" width=250><br>
  
 
 
