@@ -67,6 +67,7 @@ Present a user information about their past liked videos on Youtube, like the ch
 <img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/wireframe1.PNG" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+https://www.figma.com/file/jBVZn2pu317AiImGbn0tK2/youtube-wrapped?node-id=0%3A1
 <img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/figma_mockup.jpg" width=600>
 
 ### [BONUS] Interactive Prototype
@@ -82,9 +83,32 @@ https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scalin
 #### List of network requests by screen
    - Login Screen
       - (Read/GET) Get token from user's Youtube acount for OAuth Login
+     
+    // OAuth authenticated successfully, launch primary authenticated activity
+	// i.e Display application "homepage"
+	@Override
+	public void onLoginSuccess() {
+		Log.i("rkp", "successful login");
+		Intent i = new Intent(this, TimelineActivity.class);
+		startActivity(i);
+	}
+
+	// OAuth authentication flow failed, handle the error
+	// i.e Display an error dialog or toast
+	@Override
+	public void onLoginFailure(Exception e) {
+		e.printStackTrace();
+	}
+
+	// Click handler method for the button used to start OAuth flow
+	// Uses the client to initiate OAuth authorization
+	// This should be tied to a button used to login
+	public void loginToRest(View view) {
+		getClient().connect();
+	}
+      
    - Wrapped View Pager
       - (Read/GET) Get user's liked videos
-          - GET https://www.googleapis.com/youtube/v3/videos?myRating=like
       - (Read/GET) Get video data from those liked videos
 
 #### [OPTIONAL:] Existing API Endpoints
@@ -94,7 +118,15 @@ https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scalin
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
     `GET`    |/?part=snippet&myRating=like&maxResults=50 | get last 50 liked videos
-    `GET`    | /characters/?name=name | return specific character by name
-    `GET`    | /houses   | get all houses
-    `GET`    | /houses/?name=name | return specific house by name
-      
+    `GET`    | /youtube.channels.list?part=snippet&id={id} | get information about a channel given an ID
+
+    
+- Base URL - [https://accounts.google.com/o/oauth2/v2/]
+    HTTP Verb | Endpoint | Description
+    ----------|----------|------------
+    `GET`   |scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly&response_type=code&state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2.example.com%2Ftoken&redirect_uri={redirect_uri}client_id={client_id}            |Gets the Oath 2.0 token from the user.
+    
+
+ 
+
+
