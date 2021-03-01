@@ -83,7 +83,7 @@ https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scalin
    - Login Screen
       - (Read/GET) Get token from user's Youtube acount for OAuth Login
      
-     	// OAuth authenticated successfully, launch primary authenticated activity
+    // OAuth authenticated successfully, launch primary authenticated activity
 	// i.e Display application "homepage"
 	@Override
 	public void onLoginSuccess() {
@@ -127,4 +127,5 @@ https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scalin
     
 
  
+
 
