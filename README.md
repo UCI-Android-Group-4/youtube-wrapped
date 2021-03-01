@@ -128,7 +128,7 @@ https://www.figma.com/proto/jBVZn2pu317AiImGbn0tK2/Untitled?node-id=5%3A2&scalin
     
 ## Sprint 1
 <img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/LoginScreen.png" width=250><br>
-<img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/ResultsScreen.jpeg" width=250>
+<img src="https://github.com/UCI-Android-Group-4/youtube-wrapped/blob/main/ResultsScreen.jpg" width=250>
  
 
 
