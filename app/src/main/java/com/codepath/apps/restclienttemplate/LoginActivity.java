@@ -16,7 +16,7 @@ public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.activity_results);
 
 		final SampleModel sampleModel = new SampleModel();
 		sampleModel.setName("CodePath");
