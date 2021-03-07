@@ -24,6 +24,7 @@ import com.github.scribejava.core.builder.api.BaseApi;
 public class YoutubeClient extends OAuthBaseClient {
 	public static final BaseApi REST_API_INSTANCE = GoogleApi20.instance(); // Change this
 	public static final String REST_URL = "https://accounts.google.com/o/oauth2/v2/"; // Change this, base API URL
+	public static final String BASE_URL = "https://www.googleapis.com/youtube/v3";
 	public static final String REST_CONSUMER_KEY = BuildConfig.CONSUMER_KEY;       // Change this inside apikey.properties
 	public static final String REST_CONSUMER_SECRET = BuildConfig.CONSUMER_SECRET; // Change this inside apikey.properties
 
@@ -53,6 +54,24 @@ public class YoutubeClient extends OAuthBaseClient {
 		params.put("scope", "https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly");
 		client.get(apiUrl, params, handler);
 	}
+	public void getLastLikedVideos(JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl(BASE_URL);
+		// Can specify query string params directly or through RequestParams.
+		RequestParams params = new RequestParams();
+		params.put("part", "snippet");
+		params.put("myRating", "like");
+		param.put("maxResults", 50);
+		client.get(apiUrl, params, handler);
+	}
+	public void getChannelData(JsonHttpResponseHandler handler, String id) {
+		String apiUrl = getApiUrl(BASE_URL);
+		// Can specify query string params directly or through RequestParams.
+		RequestParams params = new RequestParams();
+		params.put("part", "snippet");
+		param.put("id", id);
+		client.get(apiUrl, params, handler);
+	}
+
 
 	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
 	 * 	  i.e getApiUrl("statuses/home_timeline.json");
