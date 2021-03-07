@@ -7,11 +7,17 @@ public class Video {
     String thumbnail;
     String videoTitle;
     String channelName;
+    String genre;
 
     public Video(JSONObject jsonObject) throws JSONException {
         thumbnail = jsonObject.getJSONObject("thumbnails").getString("url");
         videoTitle = jsonObject.getString("title");
         channelName = jsonObject.getString("channelTitle");
+
+        //TODO MAKE A GENRE CALL
+        String categoryId = jsonObject.getString("categoryId");
+        // genre = genreCall(categoryId)
+        genre = categoryId;
     }
 
     public String getThumbnail() {
@@ -26,6 +32,10 @@ public class Video {
         return videoTitle;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
     public void setThumbnail(String thumbnail) {
         this.thumbnail = thumbnail;
     }
@@ -36,5 +46,9 @@ public class Video {
 
     public void setVideoTitle(String videoTitle) {
         this.videoTitle = videoTitle;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }
