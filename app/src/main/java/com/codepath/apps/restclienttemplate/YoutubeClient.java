@@ -6,6 +6,7 @@ import com.codepath.asynchttpclient.RequestParams;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.codepath.oauth.OAuthBaseClient;
 import com.github.scribejava.apis.FlickrApi;
+import com.github.scribejava.apis.GoogleApi20;
 import com.github.scribejava.core.builder.api.BaseApi;
 
 /*
@@ -20,9 +21,9 @@ import com.github.scribejava.core.builder.api.BaseApi;
  * NOTE: You may want to rename this object based on the service i.e TwitterClient or FlickrClient
  * 
  */
-public class RestClient extends OAuthBaseClient {
-	public static final BaseApi REST_API_INSTANCE = FlickrApi.instance(FlickrApi.FlickrPerm.WRITE); // Change this
-	public static final String REST_URL = "https://api.flickr.com/services"; // Change this, base API URL
+public class YoutubeClient extends OAuthBaseClient {
+	public static final BaseApi REST_API_INSTANCE = GoogleApi20.instance(); // Change this
+	public static final String REST_URL = "https://accounts.google.com/o/oauth2/v2/"; // Change this, base API URL
 	public static final String REST_CONSUMER_KEY = BuildConfig.CONSUMER_KEY;       // Change this inside apikey.properties
 	public static final String REST_CONSUMER_SECRET = BuildConfig.CONSUMER_SECRET; // Change this inside apikey.properties
 
@@ -32,22 +33,24 @@ public class RestClient extends OAuthBaseClient {
 	// See https://developer.chrome.com/multidevice/android/intents
 	public static final String REST_CALLBACK_URL_TEMPLATE = "intent://%s#Intent;action=android.intent.action.VIEW;scheme=%s;package=%s;S.browser_fallback_url=%s;end";
 
-	public RestClient(Context context) {
+	public YoutubeClient(Context context) {
 		super(context, REST_API_INSTANCE,
 				REST_URL,
 				REST_CONSUMER_KEY,
 				REST_CONSUMER_SECRET,
-				null,  // OAuth2 scope, null for OAuth1
-				String.format(REST_CALLBACK_URL_TEMPLATE, context.getString(R.string.intent_host),
-						context.getString(R.string.intent_scheme), context.getPackageName(), FALLBACK_URL));
+				"https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly",  // OAuth2 scope, null for OAuth1
+				String.format(REST_CALLBACK_URL_TEMPLATE,
+						"cprest", "oauth", context.getPackageName(), FALLBACK_URL));
 	}
 	// CHANGE THIS
 	// DEFINE METHODS for different API endpoints here
-	public void getInterestingnessList(JsonHttpResponseHandler handler) {
-		String apiUrl = getApiUrl("?nojsoncallback=1&method=flickr.interestingness.getList");
+	public void getOAuth(JsonHttpResponseHandler handler) {
+		// 	scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly&response_type=code&state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2.example.com%2Ftoken&redirect_uri={redirect_uri}client_id={client_id}
+		String apiUrl = getApiUrl("?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly&response_type=code&state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2.example.com%2Ftoken&redirect_uri={redirect_uri}client_id={client_id}");
 		// Can specify query string params directly or through RequestParams.
 		RequestParams params = new RequestParams();
 		params.put("format", "json");
+		params.put("scope", "https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly");
 		client.get(apiUrl, params, handler);
 	}
 

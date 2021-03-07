@@ -7,5 +7,6 @@
     <string name="intent_host">cprest</string>
     <string name="channels_labels">Your favorite channels</string>
     <string name="genres_labels">Your favorite genres</string>
+    <string name="recently_liked_label">Most recently liked videos</string>
 
 </resources>

@@ -2,16 +2,20 @@ package com.codepath.apps.restclienttemplate;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 
 import com.codepath.apps.restclienttemplate.models.SampleModel;
 import com.codepath.apps.restclienttemplate.models.SampleModelDao;
 import com.codepath.oauth.OAuthLoginActionBarActivity;
 
-public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
+public class LoginActivity extends OAuthLoginActionBarActivity<YoutubeClient> {
 
+	public static final String TAG = "LoginActivity";
 	SampleModelDao sampleModelDao;
+	Button loginButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +25,7 @@ public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 		final SampleModel sampleModel = new SampleModel();
 		sampleModel.setName("CodePath");
 
-		sampleModelDao = ((RestApplication) getApplicationContext()).getMyDatabase().sampleModelDao();
+		sampleModelDao = ((YoutubeApplication) getApplicationContext()).getMyDatabase().sampleModelDao();
 
 		AsyncTask.execute(new Runnable() {
 			@Override
@@ -29,6 +33,9 @@ public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 				sampleModelDao.insertModel(sampleModel);
 			}
 		});
+
+		loginButton = findViewById(R.id.loginButton);
+
 	}
 
 
@@ -45,6 +52,7 @@ public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 	public void onLoginSuccess() {
 		// Intent i = new Intent(this, PhotosActivity.class);
 		// startActivity(i);
+		Log.i(TAG, "LoginSuccess");
 	}
 
 	// OAuth authentication flow failed, handle the error
@@ -52,6 +60,7 @@ public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 	@Override
 	public void onLoginFailure(Exception e) {
 		e.printStackTrace();
+		Log.e(TAG, "LoginFailure");
 	}
 
 	// Click handler method for the button used to start OAuth flow
@@ -59,6 +68,8 @@ public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 	// This should be tied to a button used to login
 	public void loginToRest(View view) {
 		getClient().connect();
+		Log.i(TAG, "Login to rest");
+
 	}
 
 }
