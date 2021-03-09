@@ -5,7 +5,6 @@ import android.content.Context;
 import com.codepath.asynchttpclient.RequestParams;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.codepath.oauth.OAuthBaseClient;
-import com.github.scribejava.apis.FlickrApi;
 import com.github.scribejava.apis.GoogleApi20;
 import com.github.scribejava.core.builder.api.BaseApi;
 
@@ -21,9 +20,10 @@ import com.github.scribejava.core.builder.api.BaseApi;
  * NOTE: You may want to rename this object based on the service i.e TwitterClient or FlickrClient
  * 
  */
+
 public class YoutubeClient extends OAuthBaseClient {
 	public static final BaseApi REST_API_INSTANCE = GoogleApi20.instance(); // Change this
-	public static final String REST_URL = "https://accounts.google.com/o/oauth2/v2/"; // Change this, base API URL
+	public static final String REST_URL = "https://accounts.google.com/o/oauth2/v2/auth"; // Change this, base API URL
 	public static final String BASE_URL = "https://www.googleapis.com/youtube/v3";
 	public static final String REST_CONSUMER_KEY = BuildConfig.CONSUMER_KEY;       // Change this inside apikey.properties
 	public static final String REST_CONSUMER_SECRET = BuildConfig.CONSUMER_SECRET; // Change this inside apikey.properties
@@ -32,7 +32,7 @@ public class YoutubeClient extends OAuthBaseClient {
 	public static final String FALLBACK_URL = "https://codepath.github.io/android-rest-client-template/success.html";
 
 	// See https://developer.chrome.com/multidevice/android/intents
-	public static final String REST_CALLBACK_URL_TEMPLATE = "intent://%s#Intent;action=android.intent.action.VIEW;scheme=%s;package=%s;S.browser_fallback_url=%s;end";
+	public static final String REST_CALLBACK_URL_TEMPLATE = "intent://%s;action=android.intent.action.VIEW;scheme=%s;package=%s;S.browser_fallback_url=%s;end";
 
 	public YoutubeClient(Context context) {
 		super(context, REST_API_INSTANCE,
@@ -60,7 +60,7 @@ public class YoutubeClient extends OAuthBaseClient {
 		RequestParams params = new RequestParams();
 		params.put("part", "snippet");
 		params.put("myRating", "like");
-		param.put("maxResults", 50);
+		params.put("maxResults", 50);
 		client.get(apiUrl, params, handler);
 	}
 	public void getChannelData(JsonHttpResponseHandler handler, String id) {
@@ -68,7 +68,7 @@ public class YoutubeClient extends OAuthBaseClient {
 		// Can specify query string params directly or through RequestParams.
 		RequestParams params = new RequestParams();
 		params.put("part", "snippet");
-		param.put("id", id);
+		params.put("id", id);
 		client.get(apiUrl, params, handler);
 	}
 
